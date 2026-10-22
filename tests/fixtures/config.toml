@@ -1,0 +1,27 @@
+name = "Steam"
+
+# Moonshine for the steam account. Apps are the .desktop files in
+# /usr/share/steam-session/apps; none are listed here.
+application = []
+
+[webserver]
+port = 47989
+port_https = 47984
+# Generated on first start. With state.toml beside them on the share, a
+# rebuild keeps Moonlight's pairing.
+certificate = "/var/mnt/games/.moonshine/cert.pem"
+private_key = "/var/mnt/games/.moonshine/key.pem"
+
+[[application_scanner]]
+type = "desktop"
+directories = ["/usr/share/steam-session/apps"]
+# Also the wait for an app to stop. Steam takes several seconds to exit, and
+# a launch while the previous one is still stopping fails.
+launch_timeout_secs = 30
+
+[compositor]
+# HDR10 when the client asks for it and the focused content is HDR.
+hdr = true
+# Steam integration (gamescope's -e): Steam's STEAM_GAME and overlay
+# properties decide focus.
+steam_mode = true

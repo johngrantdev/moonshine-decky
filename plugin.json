@@ -1,0 +1,10 @@
+{
+  "name": "Moonshine Config",
+  "author": "steam-bootc",
+  "flags": ["root"],
+  "api_version": 1,
+  "publish": {
+    "tags": ["moonshine", "moonlight", "streaming", "config"],
+    "description": "Safely edit Moonshine's server name, HDR and Steam mode from the Steam Game Mode Quick Access menu."
+  }
+}
